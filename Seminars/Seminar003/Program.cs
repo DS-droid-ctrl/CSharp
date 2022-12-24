@@ -1,7 +1,9 @@
-﻿// Math.Abs (); модуль числа
+﻿// Math.Abs (); модуль числа (число с минусом становиться без него). Например Console.WriteLine($"Третья цифра числа будет {Math.Abs(x)}");
 // Функция - подпрограмма, выполняющая какие-либо операции и возвращающая значение.
 // Процедура - подпрограмма, которая только выполняет операции, без возврата значения.
 // Метод - это функция или процедура, которая принадлежит классу или экземпляру класса.
+
+// x -= 10, x += 10, x /= 10, x *= 10 - значит x = x - 10, x = x + 10, x = x / 10, x = x * 10
 
 // Условия
 // https://drive.google.com/file/d/1L-0DJEqvLLWJt3narSBmVOzhgjgxCfxl/view?usp=sharing
@@ -26,9 +28,9 @@
 
 
 // Console.Clear();
-// Console.Write("Введите X: ");
+// Console.WriteLine("Введите X: ");
 // int x1 = Convert.ToInt32(Console.ReadLine());
-// Console.Write("Введите Y: ");
+// Console.WriteLine("Введите Y: ");
 // int y1 = Convert.ToInt32(Console.ReadLine());
 // if (x1 > 0 && y > 0)
 // {
@@ -51,10 +53,10 @@
 //     Console.Write("не существует");
 // }
 
-// int quarter (int x1, int y1);
 
 
-int quarter(int x1, int y1); // или void quarter(int x1, int y1);
+void quarter(int x1, int y1) // это функция после скобки точка с запятой не ставится void значит безвозвратная. 
+// Если объявить функцию int quarter(int x1, int y1) значит возвратная
 {
     if (x1 > 0 && y1 > 0)
     {
@@ -79,7 +81,7 @@ int quarter(int x1, int y1); // или void quarter(int x1, int y1);
 }
 
 Console.Write("Введите X: ");
-int x1 = Convert.ToInt32(Console.ReadLine());
+int x = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите Y: ");
-int y1 = Convert.ToInt32(Console.ReadLine());
-quarter(x1, y1);
+int y = Convert.ToInt32(Console.ReadLine());
+quarter(x, y);
