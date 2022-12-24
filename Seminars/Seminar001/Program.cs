@@ -14,6 +14,7 @@
 
 // либо Console.Write("Квадрат числа: " + sqr + "еще что-нибудь");
 
+
 Console.Write("Введите первое число: ");
 int numFirst = Convert.ToInt32(Console.ReadLine());
 
