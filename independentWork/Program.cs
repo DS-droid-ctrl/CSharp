@@ -9,5 +9,12 @@ static void formatString()
 
 static void sravnenieString()
 {
-    
+    // string str1 = "abcde";
+    // string str2 = "abcde";
+
+    // bool areEqual = str1 == str2;
+    // Console.WriteLine(areEqual);
+
+    // bool areEqual = string.Equals(str1, str2, StringComparison.Ordinal);
+    // Console.WriteLine(areEqual);
 }
