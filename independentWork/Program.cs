@@ -18,3 +18,22 @@ static void sravnenieString()
     // bool areEqual = string.Equals(str1, str2, StringComparison.Ordinal);
     // Console.WriteLine(areEqual);
 }
+
+// Console.WriteLine("Hi, please tell me your name");
+
+// string name = Console.ReadLine();
+// string sentence = $"Your name is {name}";
+// Console.WriteLine(sentence);
+
+// Console.WriteLine("Hi, please tell me your age");
+// string input = Console.ReadLine();
+// int age = int.Parse(input);
+// // int.Parse(input) преобразовывает строку в число
+
+// string sentence = $"Your age is {age}";
+// Console.WriteLine(sentence);
+
+Console.BackgroundColor = ConsoleColor.Cyan;
+Console.ForegroundColor = ConsoleColor.DarkMagenta;
+Console.Write("New Style ");
+Console.Write("New Style\n"); // \n это тоже самое, что WriteLine
