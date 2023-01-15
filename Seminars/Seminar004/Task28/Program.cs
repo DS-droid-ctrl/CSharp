@@ -88,3 +88,17 @@ int[] GetBinaryArray(int size)
 
     return result;
 }
+
+
+// Console.Clear();
+// int[] array = new int[8];
+// FillArray(array);
+// Console.WriteLine($" [ {String.Join(" , ", array)} ] ");
+// void FillArray(int[] collection) // функция заполнения массива
+// {
+//     int length = collection.Length; // определяем длину массива
+//     for (int index = 0; index < length; index++)
+//     {
+//         collection[index] = new Random().Next(0, 2); // обращение к аргументу collection с индексом и заполнение его случайным числом от 1 до 10
+//     }
+// }
