@@ -6,6 +6,38 @@ int A = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите число B: ");
 int B = Convert.ToInt32(Console.ReadLine());
 
-double result = Math.Pow(A, B);
+if (B < 0)
+{
+    B *= -1;
+}
+if (B == 0)
+{
+    Console.WriteLine($"Результат равен 1");
+}
 
-Console.WriteLine($"Ответ result={result}");
+int result = 0;
+for (int i = 0, temp = 1; i <= B; temp *=A)
+{
+    i++;
+    result = temp;
+}
+Console.WriteLine($"Чило {A} в степени {B} равно {result}");
+
+
+// Решение без цикла
+// Console.Clear();
+// Console.Write("Введите число A: ");
+// int A = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите число B: ");
+// int B = Convert.ToInt32(Console.ReadLine());
+// if (B < 0)
+// {
+//     B *= -1;
+// }
+// if (B == 0)
+// {
+//     Console.WriteLine($"Результат равен 1");
+// }
+
+// double d = Math.Pow(A, B);
+// Console.WriteLine($"Чило {A} в степени {B} равно {d}");
