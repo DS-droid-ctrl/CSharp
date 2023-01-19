@@ -3,22 +3,49 @@
 // [3 7 22 2 78] -> 76
 
 Console.Clear();
-float[] CreateRandomArray(int N, float start, float end)
+int[] CreateRandomArray(int N, int start, int end)
 {
-    float[] RandomArray = new float[N];
+    int[] RandomArray = new int[N];
     for (int i = 0; i < N; i++)
     {
-        RandomArray[i] = new Random().NextFloat(start, end + 1);
+        RandomArray[i] = new Random().Next(start, end + 1);
     }
     return RandomArray;
 }
 
 int num = 6;
-int min = -100;
-int max = 999;
+int minimum = -100;
+int maxsimum = 999;
 
-float[] myRandomArray = CreateRandomArray(num, min, max);
-Console.WriteLine($" [ {String.Join("| ", myRandomArray)} ] ");
+int[] myRandomArray = CreateRandomArray(num, minimum, maxsimum);
+Console.WriteLine($" [ {String.Join(", ", myRandomArray)} ] ");
+
+int min = myRandomArray[0];
+for (int i = 1; i < myRandomArray.Length;)
+{
+    if (min > myRandomArray[i])
+    {
+        min = myRandomArray[i];
+    }
+    i++;
+}
+Console.WriteLine($" Минимальное число равно: {min}");
+
+int max = myRandomArray[0];
+for (int i = 1; i < myRandomArray.Length;)
+{
+    if (max < myRandomArray[i])
+    {
+        max = myRandomArray[i];
+    }
+    i++;
+}
+Console.WriteLine($" Максимальное число равно: {max}");
+
+int resalt = max - min;
+Console.WriteLine($" Разница между максимальным и минимальным числом составляет: {resalt}");
+
+
 
 // генерируем и запоняем
 
