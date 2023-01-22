@@ -13,6 +13,15 @@ int[] CreateRandomArray(int N, int start, int end)
     return RandomArray;
 }
 
+/* или  int[] RandomArray(int[] array)
+int count = 0;
+foreach (var item in array)
+{
+    if (item % 2 == 0) count++;
+}
+return count;
+*/
+
 int num = 4;
 int min = 100;
 int max = 999;
