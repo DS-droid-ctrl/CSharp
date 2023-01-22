@@ -18,9 +18,9 @@ int sum = 0;
 int[] array = {a, b, c, d, e};
 for (int i = 0; i < array.Length; i++)
 {
-    if (array[i] >= 0)
+    if (array[i] > 0)
     {
         sum++;
     }
 }
-Console.Write(sum);
+Console.Write($"Введено чисел больше 0: {sum}");
