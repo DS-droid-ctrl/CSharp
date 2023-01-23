@@ -9,6 +9,7 @@ Console.WriteLine();
 PrintArray(matrix);
 Console.WriteLine("Введите искомое число: ");
 int x = Convert.ToInt32(Console.ReadLine());
+bool f = false;
 FillArraySearch(matrix);
 
 void PrintArray(int[,] matr)
@@ -40,14 +41,15 @@ void FillArraySearch(int[,] matr)
     {
         for (int j = 0; j < matr.GetLength(1); j++)
         {
-            if (matrix[i, j] == x)
-            {
-                Console.WriteLine($"Число {x} в массиве есть");              
-            }
-            else
-            {
-                Console.WriteLine($"Такого числа в массиве нет");
-            }
+            if (matrix[i, j] == x) { f = true; };
         }
+    }
+    if (f)
+    {
+        Console.WriteLine($"Число {x} в массиве есть");
+    }
+    else
+    {
+        Console.WriteLine($"Такого числа в массиве нет");
     }
 }
