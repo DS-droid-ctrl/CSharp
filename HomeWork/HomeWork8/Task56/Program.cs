@@ -2,51 +2,57 @@
 // программу, которая будет находить строку с наименьшей суммой элементов
 
 Console.Clear();
-Console.WriteLine("Введите размер двумерного массива через пробел:");
+Console.WriteLine("Введите размер двумерного массива:");
 int a = Convert.ToInt32(Console.ReadLine());
 int b = Convert.ToInt32(Console.ReadLine());
+
 int[,] matrix = new int[a, b];
-
-FillArray(matrix);
-Console.WriteLine();
+FillArrayRandom(matrix);
 PrintArray(matrix);
-//FillArrayReplace(matrix);
+Console.WriteLine();
+MinRow(matrix);
 
-void PrintArray(int[,] matr)
+void FillArrayRandom(int[,] array)
 {
-    for (int i = 0; i < matrix.GetLength(0); i++)
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-        for (int j = 0; j < matrix.GetLength(1); j++)
+        for (int j = 0; j < array.GetLength(1); j++)
         {
-            Console.Write($"{matr[i, j]} ");
+            array[i, j] = new Random().Next(1, 10);
+        }
+    }
+}
+
+void PrintArray(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write($"{array[i, j]} ");
         }
         Console.WriteLine();
     }
 }
 
-void FillArray(int[,] matr)
+void MinRow(int[,] array)
 {
-    for (int i = 0; i < matr.GetLength(0); i++)
+    int minRow = 0;
+    int minSumRow = 0;
+    int sumRow = 0;
+    for (int i = 0; i < array.GetLength(1); i++)
     {
-        for (int j = 0; j < matr.GetLength(1); j++)
-        {
-            matr[i, j] = new Random().Next(0, 10);
-        }
+        minRow += array[0, i];
     }
-}
-
-int[,] MultiMatrix(int[,] arrayA, int[,] arrayB)
-{
-    int[,] arrayC = new int[arrayA.GetLength(0), arrayB.GetLength(1)];
-    for (int i = 0; i < arrayA.GetLength(0); i++)
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-        for (int j = 0; j < arrayB.GetLength(1); j++)
+        for (int j = 0; j < array.GetLength(1); j++) sumRow += array[i, j];
+        if (sumRow < minRow)
         {
-            for (int k = 0; k < arrayA.GetLength(1); k++)
-            {
-                arrayC[i, j] += arrayA[i, k] * arrayB[k, j];
-            }
+            minRow = sumRow;
+            minSumRow = i;
         }
+        sumRow = 0;
     }
-    return arrayC;
+    Console.Write($"{minSumRow + 1} строка");
 }
