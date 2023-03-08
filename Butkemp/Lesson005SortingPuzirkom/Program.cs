@@ -87,3 +87,51 @@ PrintArray(array);
 
 // 2. Сортировка методом пузырька (оптимизированная)
 
+int[] array = new int[10];
+
+void FillArray(int[] collection) // функция заполнения массива
+{
+    int length = collection.Length; // определяем длину массива
+    int index = 0;
+    while (index < length)
+    {
+        collection[index] = new Random().Next(1, 10); // обращение к аргументу collection с индексом и заполнение его случайным числом от 1 до 10
+        index++;
+    }
+}
+
+void PrintArray(int[] col) // метод отборажения элементов массива
+{
+    int count = array.Length;
+    int position = 0;
+    while (position < count)
+    {
+        Console.Write($" " + array[position]);
+        position++;
+    }
+}
+
+static int[] SortgBableOptimized(int[] array)
+{
+    int size = array.Length;
+
+    for (int current = 0; current < size; current++)
+    {
+        for (int i = 0; i < size - 1 - current; i++)
+        {
+            if (array[i] > array[i + 1])
+            {
+                int temp = array[i];
+                array[i] = array[i + 1];
+                array[i + 1] = temp;
+            }            
+        }
+    }
+    return array;
+}
+
+FillArray(array);
+PrintArray(array);
+Console.WriteLine();
+SortgBableOptimized(array);
+PrintArray(array);
